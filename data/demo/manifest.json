@@ -1,0 +1,357 @@
+{
+  "disclaimer": "Dataset 100 % ficticio generado para demostración. No representa empresas ni cifras reales.",
+  "organization": {
+    "id": "209fba53-2adf-56ad-94b0-41a58bd7dd47",
+    "slug": "altavista-demo",
+    "presentation_currency": "USD"
+  },
+  "second_organization": {
+    "id": "e45c9190-cbdc-5006-9aa2-712ddb943bba",
+    "slug": "boreal-demo"
+  },
+  "fiscal_year": 2027,
+  "companies": [
+    {
+      "id": "f28466d6-5a94-5316-826d-8f404a1d5ead",
+      "code": "ALT-ALIM",
+      "name": "Altavista Alimentos, S.A.",
+      "country": "GT",
+      "currency": "GTQ",
+      "format": "GT"
+    },
+    {
+      "id": "74b53d8d-47ad-5fc7-a9ca-68c8218dff90",
+      "code": "ALT-LOGI",
+      "name": "Altavista Logística, S.A.",
+      "country": "GT",
+      "currency": "GTQ",
+      "format": "GT"
+    },
+    {
+      "id": "1ae2c963-fbd7-5319-9a7b-37b2feafea2a",
+      "code": "ALT-COMR",
+      "name": "Altavista Comercial de Honduras, S. de R.L.",
+      "country": "HN",
+      "currency": "HNL",
+      "format": "HN"
+    },
+    {
+      "id": "2b952d5b-d1ac-51d1-b91a-00b1fddcdad9",
+      "code": "ALT-SERV",
+      "name": "Altavista Servicios Compartidos, S. de R.L.",
+      "country": "HN",
+      "currency": "HNL",
+      "format": "HN"
+    },
+    {
+      "id": "409a0957-0856-5434-a00e-cc5d65979439",
+      "code": "ALT-DIST",
+      "name": "Altavista Distribuidora, S.A. de C.V.",
+      "country": "SV",
+      "currency": "USD",
+      "format": "SV"
+    },
+    {
+      "id": "d5d8d162-6593-5afb-9232-20116215add8",
+      "code": "ALT-HOLD",
+      "name": "Altavista Holding Corp.",
+      "country": "PA",
+      "currency": "USD",
+      "format": "PA"
+    }
+  ],
+  "column_mappings": {
+    "GT": {
+      "columns": {
+        "account_code": "Cuenta Contable",
+        "account_name": "Descripción",
+        "period": "Mes",
+        "amount": "Importe",
+        "currency": "Moneda",
+        "counterparty_code": "Contraparte",
+        "ic_reference": "Referencia IC"
+      },
+      "kind": "csv",
+      "delimiter": ",",
+      "decimal_separator": ".",
+      "thousands_separator": "",
+      "period_format": "YYYY-MM"
+    },
+    "HN": {
+      "columns": {
+        "account_code": "codigo_cuenta",
+        "account_name": "nombre_cuenta",
+        "period": "periodo",
+        "amount": "monto",
+        "currency": "moneda",
+        "counterparty_code": "cia_relacionada",
+        "ic_reference": "doc_ic"
+      },
+      "kind": "csv",
+      "delimiter": ",",
+      "decimal_separator": ".",
+      "thousands_separator": "",
+      "period_format": "YYYYMM"
+    },
+    "SV": {
+      "columns": {
+        "account_code": "Account",
+        "account_name": "Account Name",
+        "period": "Period",
+        "amount": "Amount",
+        "currency": "Currency",
+        "counterparty_code": "IC Partner",
+        "ic_reference": "IC Ref"
+      },
+      "kind": "xlsx",
+      "sheet": "Presupuesto",
+      "decimal_separator": ".",
+      "thousands_separator": "",
+      "period_format": "MON-YYYY"
+    },
+    "PA": {
+      "columns": {
+        "account_code": "Cta",
+        "account_name": "Concepto",
+        "period": "Mes",
+        "amount": "Valor",
+        "currency": "Divisa",
+        "counterparty_code": "Socio IC",
+        "ic_reference": "Ref IC"
+      },
+      "kind": "csv",
+      "delimiter": ";",
+      "decimal_separator": ",",
+      "thousands_separator": ".",
+      "period_format": "MM/YYYY"
+    }
+  },
+  "versions": [
+    {
+      "id": "f9370cdd-e613-5477-9dfd-0269a595b8c6",
+      "code": "PRES-2027-V1",
+      "name": "Presupuesto 2027 · Versión 1",
+      "kind": "budget",
+      "rate_scenario": "PRESUPUESTO",
+      "includes_balance_sheet": true,
+      "files": [
+        {
+          "company": "ALT-ALIM",
+          "file": "data/demo/files/PRES-2027-V1/ALT-ALIM.csv",
+          "rows": 147
+        },
+        {
+          "company": "ALT-LOGI",
+          "file": "data/demo/files/PRES-2027-V1/ALT-LOGI.csv",
+          "rows": 110
+        },
+        {
+          "company": "ALT-COMR",
+          "file": "data/demo/files/PRES-2027-V1/ALT-COMR.csv",
+          "rows": 127
+        },
+        {
+          "company": "ALT-SERV",
+          "file": "data/demo/files/PRES-2027-V1/ALT-SERV.csv",
+          "rows": 119
+        },
+        {
+          "company": "ALT-DIST",
+          "file": "data/demo/files/PRES-2027-V1/ALT-DIST.xlsx",
+          "rows": 136
+        },
+        {
+          "company": "ALT-HOLD",
+          "file": "data/demo/files/PRES-2027-V1/ALT-HOLD.csv",
+          "rows": 132
+        }
+      ],
+      "has_seeded_errors": false
+    },
+    {
+      "id": "4c3f65ad-4e73-5fb3-b145-57182bf9fe34",
+      "code": "PRES-2027-V2",
+      "name": "Presupuesto 2027 · Versión 2 (revisión)",
+      "kind": "budget",
+      "rate_scenario": "PRESUPUESTO-REV",
+      "includes_balance_sheet": true,
+      "files": [
+        {
+          "company": "ALT-ALIM",
+          "file": "data/demo/files/PRES-2027-V2/ALT-ALIM.csv",
+          "rows": 148
+        },
+        {
+          "company": "ALT-LOGI",
+          "file": "data/demo/files/PRES-2027-V2/ALT-LOGI.csv",
+          "rows": 112
+        },
+        {
+          "company": "ALT-COMR",
+          "file": "data/demo/files/PRES-2027-V2/ALT-COMR.csv",
+          "rows": 125
+        },
+        {
+          "company": "ALT-SERV",
+          "file": "data/demo/files/PRES-2027-V2/ALT-SERV.csv",
+          "rows": 120
+        },
+        {
+          "company": "ALT-DIST",
+          "file": "data/demo/files/PRES-2027-V2/ALT-DIST.xlsx",
+          "rows": 137
+        },
+        {
+          "company": "ALT-HOLD",
+          "file": "data/demo/files/PRES-2027-V2/ALT-HOLD.csv",
+          "rows": 133
+        }
+      ],
+      "has_seeded_errors": true
+    },
+    {
+      "id": "124c9d7f-6165-5b27-8e1c-dd23316c2471",
+      "code": "PROY-2027",
+      "name": "Proyección de ejecución 2027",
+      "kind": "forecast",
+      "rate_scenario": "PROYECCION",
+      "includes_balance_sheet": false,
+      "files": [
+        {
+          "company": "ALT-ALIM",
+          "file": "data/demo/files/PROY-2027/ALT-ALIM.csv",
+          "rows": 132
+        },
+        {
+          "company": "ALT-LOGI",
+          "file": "data/demo/files/PROY-2027/ALT-LOGI.csv",
+          "rows": 98
+        },
+        {
+          "company": "ALT-COMR",
+          "file": "data/demo/files/PROY-2027/ALT-COMR.csv",
+          "rows": 116
+        },
+        {
+          "company": "ALT-SERV",
+          "file": "data/demo/files/PROY-2027/ALT-SERV.csv",
+          "rows": 107
+        },
+        {
+          "company": "ALT-DIST",
+          "file": "data/demo/files/PROY-2027/ALT-DIST.xlsx",
+          "rows": 121
+        },
+        {
+          "company": "ALT-HOLD",
+          "file": "data/demo/files/PROY-2027/ALT-HOLD.csv",
+          "rows": 120
+        }
+      ],
+      "has_seeded_errors": false
+    }
+  ],
+  "seeded_errors": [
+    {
+      "id": 1,
+      "type": "duplicate_row",
+      "rule": "DUPLICATE_ROW",
+      "severity": "critical",
+      "company": "ALT-ALIM",
+      "detail": "Fila de arrendamiento 2027-03 repetida",
+      "resolution": {
+        "action": "exclude_line",
+        "target": "second_occurrence"
+      }
+    },
+    {
+      "id": 2,
+      "type": "unmapped_account",
+      "rule": "UNMAPPED_ACCOUNT",
+      "severity": "critical",
+      "company": "ALT-LOGI",
+      "detail": "Cuenta 6-09-099 sin homologar",
+      "resolution": {
+        "action": "map_account",
+        "company_account": "6-09-099",
+        "group_account": "6900"
+      }
+    },
+    {
+      "id": 3,
+      "type": "missing_fx_rate",
+      "rule": "MISSING_FX_RATE",
+      "severity": "critical",
+      "company": "ALT-COMR",
+      "detail": "Falta tasa promedio HNL→USD 2027-07 (PRESUPUESTO-REV)",
+      "resolution": {
+        "action": "add_rate",
+        "from": "HNL",
+        "to": "USD",
+        "rate_type": "average",
+        "period": "2027-07",
+        "scenario": "PRESUPUESTO-REV",
+        "rate": "0.039640"
+      }
+    },
+    {
+      "id": 4,
+      "type": "ic_mismatch",
+      "rule": "IC_MISMATCH",
+      "severity": "critical",
+      "company": "ALT-DIST",
+      "detail": "VTA-2027-06-ALIM-DIST: costo registrado 5 % menor que la venta",
+      "resolution": {
+        "action": "accept_ic_difference"
+      }
+    },
+    {
+      "id": 5,
+      "type": "invalid_currency",
+      "rule": "UNKNOWN_CURRENCY",
+      "severity": "critical",
+      "company": "ALT-SERV",
+      "detail": "Moneda 'LPS' no existe en el catálogo",
+      "resolution": {
+        "action": "correct_field",
+        "field": "currency",
+        "value": "HNL"
+      }
+    },
+    {
+      "id": 6,
+      "type": "invalid_period",
+      "rule": "INVALID_PERIOD",
+      "severity": "critical",
+      "company": "ALT-HOLD",
+      "detail": "Periodo '13/2027' no válido",
+      "resolution": {
+        "action": "exclude_line"
+      }
+    },
+    {
+      "id": 7,
+      "type": "inconsistent_amount",
+      "rule": "INCONSISTENT_SIGN",
+      "severity": "warning",
+      "company": "ALT-COMR",
+      "detail": "Ingreso negativo en 2027-09",
+      "resolution": {
+        "action": "correct_field",
+        "field": "amount",
+        "value": "abs"
+      }
+    },
+    {
+      "id": 8,
+      "type": "unknown_counterparty",
+      "rule": "IC_COUNTERPARTY_UNKNOWN",
+      "severity": "critical",
+      "company": "ALT-COMR",
+      "detail": "Contraparte 'ALT-CRIC' no pertenece al grupo",
+      "resolution": {
+        "action": "exclude_line"
+      }
+    }
+  ]
+}

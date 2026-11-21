@@ -1,0 +1,37 @@
+{
+  "name": "nexora-ai",
+  "private": true,
+  "version": "0.1.0",
+  "description": "NEXORA AI — plataforma de consolidación e inteligencia financiera generativa",
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "workers/*"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "db:start": "npx supabase start -x realtime,edge-runtime,logflare,vector,supavisor,imgproxy,postgres-meta,studio",
+    "db:stop": "npx supabase stop",
+    "db:reset": "npx supabase db reset",
+    "demo:generate": "python scripts/generate_demo_data.py",
+    "demo:setup": "npm run db:reset && npm run deploy:seed",
+    "dev:api": "npm run dev -w @nexora/api",
+    "dev:web": "npm run dev -w @nexora/web",
+    "typecheck": "tsc -p tsconfig.json --noEmit && npm run typecheck -w @nexora/web",
+    "ai:check": "tsx --env-file=.env scripts/ai-check.ts",
+    "dev": "node scripts/dev.mjs",
+    "db:status": "npx supabase status",
+    "deploy:seed": "tsx --env-file-if-exists=.env scripts/deploy-seed.ts",
+    "build:web": "npm run generate -w @nexora/web"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "tsx": "^4.23.15"
+  }
+}

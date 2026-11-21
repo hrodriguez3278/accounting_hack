@@ -1,0 +1,128 @@
+@import "@fontsource/montserrat/400.css";
+@import "@fontsource/montserrat/600.css";
+@import "@fontsource/montserrat/700.css";
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ───────────── Tokens Íntegro (Apéndice A del skill de marca) ───────────── */
+:root {
+  --integro-black: #000000;
+  --integro-gray: #89888a;
+  --integro-light-gray: #e1e2e4;
+  --integro-red: #c3302d;
+  --integro-white: #ffffff;
+  --integro-gray-text: #747376;
+
+  --surface: #ffffff;
+  --surface-muted: #f3f3f4;
+  --surface-sunken: #e1e2e4;
+  --surface-inverse: #000000;
+  --text: #000000;
+  --text-muted: #747376;
+  --text-inverse: #ffffff;
+  --border: #d4d4d6;
+  --border-strong: #000000;
+  --accent: #c3302d;
+  --accent-hover: #ad2a28;
+  --focus: #c3302d;
+  /* Semánticos operativos: en producto el rojo significa criticidad */
+  --critical: #b3261e;
+  --critical-bg: #fbeceb;
+  --warning: #8a5a00;
+  --warning-bg: #fbf3e1;
+  --success: #1e6b3a;
+  --success-bg: #e8f3ec;
+  --info-bg: #eeeeef;
+
+  --chart-1: #000000;
+  --chart-2: #c3302d;
+  --chart-3: #89888a;
+  --chart-4: #5a595c;
+  --chart-grid: #e1e2e4;
+  --chart-axis: #747376;
+  color-scheme: light;
+}
+
+.dark {
+  --surface: #0b0b0c;
+  --surface-muted: #161617;
+  --surface-sunken: #222224;
+  --surface-inverse: #ffffff;
+  --text: #f4f4f5;
+  --text-muted: #b2b1b4;
+  --text-inverse: #000000;
+  --border: #2f2f32;
+  --border-strong: #f4f4f5;
+  --accent: #e0524f;
+  --accent-hover: #ea6b68;
+  --focus: #e0524f;
+  --critical: #ff8a80;
+  --critical-bg: #3a1513;
+  --warning: #f2c46b;
+  --warning-bg: #33280f;
+  --success: #7fd19b;
+  --success-bg: #12301d;
+  --info-bg: #1c1c1e;
+
+  --chart-1: #ffffff;
+  --chart-2: #e0524f;
+  --chart-3: #89888a;
+  --chart-4: #bdbcbf;
+  --chart-grid: #2a2a2d;
+  --chart-axis: #b2b1b4;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --font-sans: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-surface-sunken: var(--surface-sunken);
+  --color-inverse: var(--surface-inverse);
+  --color-ink: var(--text);
+  --color-muted: var(--text-muted);
+  --color-ink-inverse: var(--text-inverse);
+  --color-line: var(--border);
+  --color-line-strong: var(--border-strong);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-critical: var(--critical);
+  --color-critical-bg: var(--critical-bg);
+  --color-warning: var(--warning);
+  --color-warning-bg: var(--warning-bg);
+  --color-success: var(--success);
+  --color-success-bg: var(--success-bg);
+  --color-info-bg: var(--info-bg);
+  --radius-ui: 0.25rem;
+  --ease-brand: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html { font-family: var(--font-sans); background: var(--surface); color: var(--text); text-rendering: optimizeLegibility; }
+body { margin: 0; font-size: 0.9375rem; line-height: 1.55; background: var(--surface); }
+::selection { color: #fff; background: var(--integro-red); }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.brand-period { color: var(--accent); }
+
+@utility tabular { font-variant-numeric: tabular-nums; }
+
+@layer components {
+  .btn { @apply inline-flex min-h-11 items-center justify-center gap-2 whitespace-nowrap rounded-ui border px-5 text-sm font-semibold transition duration-200 ease-brand disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-primary { @apply inline-flex min-h-11 items-center justify-center gap-2 whitespace-nowrap rounded-ui border px-5 text-sm font-semibold transition duration-200 ease-brand disabled:cursor-not-allowed disabled:opacity-50 border-transparent bg-accent text-white hover:-translate-y-px hover:bg-accent-hover active:translate-y-0; }
+  .btn-secondary { @apply inline-flex min-h-11 items-center justify-center gap-2 whitespace-nowrap rounded-ui border px-5 text-sm font-semibold transition duration-200 ease-brand disabled:cursor-not-allowed disabled:opacity-50 border-transparent bg-inverse text-ink-inverse hover:opacity-90; }
+  .btn-outline { @apply inline-flex min-h-11 items-center justify-center gap-2 whitespace-nowrap rounded-ui border px-5 text-sm font-semibold transition duration-200 ease-brand disabled:cursor-not-allowed disabled:opacity-50 border-line-strong bg-transparent text-ink hover:bg-surface-muted; }
+  .btn-ghost { @apply inline-flex min-h-9 items-center justify-center gap-2 whitespace-nowrap rounded-ui border border-transparent px-3 text-sm font-semibold text-ink transition duration-200 ease-brand hover:bg-surface-muted disabled:cursor-not-allowed disabled:opacity-50; }
+  .field-label { @apply mb-1.5 block text-sm font-semibold text-ink; }
+  .field { @apply min-h-11 w-full rounded-ui border border-line bg-surface px-3 text-sm text-ink outline-none focus-visible:border-line-strong; }
+  .panel { @apply min-w-0 rounded-ui border border-line bg-surface; }
+  .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.08em] text-muted; }
+  .h-page { @apply text-[clamp(1.6rem,2.4vw,2.25rem)] font-bold leading-[1.05] tracking-[-0.03em]; }
+  .table-base { @apply w-full border-collapse text-sm; }
+  .table-base th { @apply sticky top-0 z-10 border-b border-line-strong bg-surface px-3 py-2.5 text-left text-xs font-semibold uppercase tracking-wide text-muted; }
+  .table-base td { @apply border-b border-line px-3 py-2.5 align-middle; }
+  .table-base td.num, .table-base th.num { @apply whitespace-nowrap text-right tabular; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}

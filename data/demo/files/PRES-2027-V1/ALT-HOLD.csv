@@ -1,0 +1,133 @@
+Cta;Concepto;Mes;Valor;Divisa;Socio IC;Ref IC
+REV.SALES;Ingresos por ventas;01/2027;184.000,00;USD;;
+EXP.PAYROLL;Sueldos y prestaciones;01/2027;95.000,00;USD;;
+EXP.RENT;Arrendamientos;01/2027;18.000,00;USD;;
+EXP.OTHER;Otros gastos operativos;01/2027;21.000,00;USD;;
+EXP.DA;Depreciación y amortización;01/2027;9.000,00;USD;;
+EXP.FIN;Gasto financiero;01/2027;41.000,00;USD;;
+REV.SALES;Ingresos por ventas;02/2027;176.000,00;USD;;
+EXP.PAYROLL;Sueldos y prestaciones;02/2027;95.000,00;USD;;
+EXP.RENT;Arrendamientos;02/2027;18.000,00;USD;;
+EXP.OTHER;Otros gastos operativos;02/2027;21.000,00;USD;;
+EXP.DA;Depreciación y amortización;02/2027;9.000,00;USD;;
+EXP.FIN;Gasto financiero;02/2027;41.000,00;USD;;
+REV.SALES;Ingresos por ventas;03/2027;194.000,00;USD;;
+EXP.PAYROLL;Sueldos y prestaciones;03/2027;95.000,00;USD;;
+EXP.RENT;Arrendamientos;03/2027;18.000,00;USD;;
+EXP.OTHER;Otros gastos operativos;03/2027;21.000,00;USD;;
+EXP.DA;Depreciación y amortización;03/2027;9.000,00;USD;;
+EXP.FIN;Gasto financiero;03/2027;41.000,00;USD;;
+REV.SALES;Ingresos por ventas;04/2027;200.000,00;USD;;
+EXP.PAYROLL;Sueldos y prestaciones;04/2027;95.000,00;USD;;
+EXP.RENT;Arrendamientos;04/2027;18.000,00;USD;;
+EXP.OTHER;Otros gastos operativos;04/2027;21.000,00;USD;;
+EXP.DA;Depreciación y amortización;04/2027;9.000,00;USD;;
+EXP.FIN;Gasto financiero;04/2027;41.000,00;USD;;
+REV.SALES;Ingresos por ventas;05/2027;204.000,00;USD;;
+EXP.PAYROLL;Sueldos y prestaciones;05/2027;95.000,00;USD;;
+EXP.RENT;Arrendamientos;05/2027;18.000,00;USD;;
+EXP.OTHER;Otros gastos operativos;05/2027;21.000,00;USD;;
+EXP.DA;Depreciación y amortización;05/2027;9.000,00;USD;;
+EXP.FIN;Gasto financiero;05/2027;41.000,00;USD;;
+REV.SALES;Ingresos por ventas;06/2027;200.000,00;USD;;
+EXP.PAYROLL;Sueldos y prestaciones;06/2027;95.000,00;USD;;
+EXP.RENT;Arrendamientos;06/2027;18.000,00;USD;;
+EXP.OTHER;Otros gastos operativos;06/2027;21.000,00;USD;;
+EXP.DA;Depreciación y amortización;06/2027;9.000,00;USD;;
+EXP.FIN;Gasto financiero;06/2027;41.000,00;USD;;
+REV.SALES;Ingresos por ventas;07/2027;196.000,00;USD;;
+EXP.PAYROLL;Sueldos y prestaciones;07/2027;95.000,00;USD;;
+EXP.RENT;Arrendamientos;07/2027;18.000,00;USD;;
+EXP.OTHER;Otros gastos operativos;07/2027;21.000,00;USD;;
+EXP.DA;Depreciación y amortización;07/2027;9.000,00;USD;;
+EXP.FIN;Gasto financiero;07/2027;41.000,00;USD;;
+REV.SALES;Ingresos por ventas;08/2027;202.000,00;USD;;
+EXP.PAYROLL;Sueldos y prestaciones;08/2027;95.000,00;USD;;
+EXP.RENT;Arrendamientos;08/2027;18.000,00;USD;;
+EXP.OTHER;Otros gastos operativos;08/2027;21.000,00;USD;;
+EXP.DA;Depreciación y amortización;08/2027;9.000,00;USD;;
+EXP.FIN;Gasto financiero;08/2027;41.000,00;USD;;
+REV.SALES;Ingresos por ventas;09/2027;200.000,00;USD;;
+EXP.PAYROLL;Sueldos y prestaciones;09/2027;95.000,00;USD;;
+EXP.RENT;Arrendamientos;09/2027;18.000,00;USD;;
+EXP.OTHER;Otros gastos operativos;09/2027;21.000,00;USD;;
+EXP.DA;Depreciación y amortización;09/2027;9.000,00;USD;;
+EXP.FIN;Gasto financiero;09/2027;41.000,00;USD;;
+REV.SALES;Ingresos por ventas;10/2027;208.000,00;USD;;
+EXP.PAYROLL;Sueldos y prestaciones;10/2027;95.000,00;USD;;
+EXP.RENT;Arrendamientos;10/2027;18.000,00;USD;;
+EXP.OTHER;Otros gastos operativos;10/2027;21.000,00;USD;;
+EXP.DA;Depreciación y amortización;10/2027;9.000,00;USD;;
+EXP.FIN;Gasto financiero;10/2027;41.000,00;USD;;
+REV.SALES;Ingresos por ventas;11/2027;212.000,00;USD;;
+EXP.PAYROLL;Sueldos y prestaciones;11/2027;95.000,00;USD;;
+EXP.RENT;Arrendamientos;11/2027;18.000,00;USD;;
+EXP.OTHER;Otros gastos operativos;11/2027;21.000,00;USD;;
+EXP.DA;Depreciación y amortización;11/2027;9.000,00;USD;;
+EXP.FIN;Gasto financiero;11/2027;41.000,00;USD;;
+REV.SALES;Ingresos por ventas;12/2027;224.000,00;USD;;
+EXP.PAYROLL;Sueldos y prestaciones;12/2027;95.000,00;USD;;
+EXP.RENT;Arrendamientos;12/2027;18.000,00;USD;;
+EXP.OTHER;Otros gastos operativos;12/2027;21.000,00;USD;;
+EXP.DA;Depreciación y amortización;12/2027;9.000,00;USD;;
+EXP.FIN;Gasto financiero;12/2027;41.000,00;USD;;
+REV.IC;Ingresos intercompañía;01/2027;40.000,00;USD;ALT-ALIM;MF-2027-01-ALT-ALIM
+REV.IC;Ingresos intercompañía;01/2027;25.000,00;USD;ALT-COMR;MF-2027-01-ALT-COMR
+REV.IC;Ingresos intercompañía;01/2027;30.000,00;USD;ALT-DIST;MF-2027-01-ALT-DIST
+REV.IC;Ingresos intercompañía;02/2027;40.000,00;USD;ALT-ALIM;MF-2027-02-ALT-ALIM
+REV.IC;Ingresos intercompañía;02/2027;25.000,00;USD;ALT-COMR;MF-2027-02-ALT-COMR
+REV.IC;Ingresos intercompañía;02/2027;30.000,00;USD;ALT-DIST;MF-2027-02-ALT-DIST
+REV.IC;Ingresos intercompañía;03/2027;40.000,00;USD;ALT-ALIM;MF-2027-03-ALT-ALIM
+REV.IC;Ingresos intercompañía;03/2027;25.000,00;USD;ALT-COMR;MF-2027-03-ALT-COMR
+REV.IC;Ingresos intercompañía;03/2027;30.000,00;USD;ALT-DIST;MF-2027-03-ALT-DIST
+REV.IC;Ingresos intercompañía;04/2027;40.000,00;USD;ALT-ALIM;MF-2027-04-ALT-ALIM
+REV.IC;Ingresos intercompañía;04/2027;25.000,00;USD;ALT-COMR;MF-2027-04-ALT-COMR
+REV.IC;Ingresos intercompañía;04/2027;30.000,00;USD;ALT-DIST;MF-2027-04-ALT-DIST
+REV.IC;Ingresos intercompañía;05/2027;40.000,00;USD;ALT-ALIM;MF-2027-05-ALT-ALIM
+REV.IC;Ingresos intercompañía;05/2027;25.000,00;USD;ALT-COMR;MF-2027-05-ALT-COMR
+REV.IC;Ingresos intercompañía;05/2027;30.000,00;USD;ALT-DIST;MF-2027-05-ALT-DIST
+REV.IC;Ingresos intercompañía;06/2027;40.000,00;USD;ALT-ALIM;MF-2027-06-ALT-ALIM
+REV.IC;Ingresos intercompañía;06/2027;25.000,00;USD;ALT-COMR;MF-2027-06-ALT-COMR
+REV.IC;Ingresos intercompañía;06/2027;30.000,00;USD;ALT-DIST;MF-2027-06-ALT-DIST
+REV.IC;Ingresos intercompañía;07/2027;40.000,00;USD;ALT-ALIM;MF-2027-07-ALT-ALIM
+REV.IC;Ingresos intercompañía;07/2027;25.000,00;USD;ALT-COMR;MF-2027-07-ALT-COMR
+REV.IC;Ingresos intercompañía;07/2027;30.000,00;USD;ALT-DIST;MF-2027-07-ALT-DIST
+REV.IC;Ingresos intercompañía;08/2027;40.000,00;USD;ALT-ALIM;MF-2027-08-ALT-ALIM
+REV.IC;Ingresos intercompañía;08/2027;25.000,00;USD;ALT-COMR;MF-2027-08-ALT-COMR
+REV.IC;Ingresos intercompañía;08/2027;30.000,00;USD;ALT-DIST;MF-2027-08-ALT-DIST
+REV.IC;Ingresos intercompañía;09/2027;40.000,00;USD;ALT-ALIM;MF-2027-09-ALT-ALIM
+REV.IC;Ingresos intercompañía;09/2027;25.000,00;USD;ALT-COMR;MF-2027-09-ALT-COMR
+REV.IC;Ingresos intercompañía;09/2027;30.000,00;USD;ALT-DIST;MF-2027-09-ALT-DIST
+REV.IC;Ingresos intercompañía;10/2027;40.000,00;USD;ALT-ALIM;MF-2027-10-ALT-ALIM
+REV.IC;Ingresos intercompañía;10/2027;25.000,00;USD;ALT-COMR;MF-2027-10-ALT-COMR
+REV.IC;Ingresos intercompañía;10/2027;30.000,00;USD;ALT-DIST;MF-2027-10-ALT-DIST
+REV.IC;Ingresos intercompañía;11/2027;40.000,00;USD;ALT-ALIM;MF-2027-11-ALT-ALIM
+REV.IC;Ingresos intercompañía;11/2027;25.000,00;USD;ALT-COMR;MF-2027-11-ALT-COMR
+REV.IC;Ingresos intercompañía;11/2027;30.000,00;USD;ALT-DIST;MF-2027-11-ALT-DIST
+REV.IC;Ingresos intercompañía;12/2027;40.000,00;USD;ALT-ALIM;MF-2027-12-ALT-ALIM
+REV.IC;Ingresos intercompañía;12/2027;25.000,00;USD;ALT-COMR;MF-2027-12-ALT-COMR
+REV.IC;Ingresos intercompañía;12/2027;30.000,00;USD;ALT-DIST;MF-2027-12-ALT-DIST
+EXP.TAX;Impuesto sobre la renta;01/2027;23.750,00;USD;;
+EXP.TAX;Impuesto sobre la renta;02/2027;21.750,00;USD;;
+EXP.TAX;Impuesto sobre la renta;03/2027;26.250,00;USD;;
+EXP.TAX;Impuesto sobre la renta;04/2027;27.750,00;USD;;
+EXP.TAX;Impuesto sobre la renta;05/2027;28.750,00;USD;;
+EXP.TAX;Impuesto sobre la renta;06/2027;27.750,00;USD;;
+EXP.TAX;Impuesto sobre la renta;07/2027;26.750,00;USD;;
+EXP.TAX;Impuesto sobre la renta;08/2027;28.250,00;USD;;
+EXP.TAX;Impuesto sobre la renta;09/2027;27.750,00;USD;;
+EXP.TAX;Impuesto sobre la renta;10/2027;29.750,00;USD;;
+EXP.TAX;Impuesto sobre la renta;11/2027;30.750,00;USD;;
+EXP.TAX;Impuesto sobre la renta;12/2027;33.750,00;USD;;
+BS.CASH;Efectivo y equivalentes;12/2026;2.600.000,00;USD;;
+BS.AR;Cuentas por cobrar;12/2026;380.000,00;USD;;
+BS.PPE;Propiedad, planta y equipo neto;12/2026;1.200.000,00;USD;;
+BS.AP;Cuentas por pagar;12/2026;210.000,00;USD;;
+BS.DEBT;Deuda financiera;12/2026;6.500.000,00;USD;;
+BS.EQUITY;Patrimonio;12/2026;-2.530.000,00;USD;;
+BS.CASH;Efectivo y equivalentes;12/2027;3.050.000,00;USD;;
+BS.AR;Cuentas por cobrar;12/2027;410.000,00;USD;;
+BS.PPE;Propiedad, planta y equipo neto;12/2027;1.180.000,00;USD;;
+BS.AP;Cuentas por pagar;12/2027;230.000,00;USD;;
+BS.DEBT;Deuda financiera;12/2027;6.100.000,00;USD;;
+BS.EQUITY;Patrimonio;12/2027;-1.690.000,00;USD;;

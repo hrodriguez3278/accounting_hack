@@ -1,0 +1,23 @@
+# Ejecución de producción de NEXORA AI (API + web) contra el Supabase configurado en .env.
+#   docker compose up -d --build
+# Las variables NUXT_PUBLIC_* se incrustan al compilar la web.
+services:
+  api:
+    build: { context: ., dockerfile: deploy/api.Dockerfile }
+    env_file: .env
+    environment:
+      API_HOST: 0.0.0.0
+      SEED_DEMO: ${SEED_DEMO:-true}
+    ports: ["4000:4000"]
+    restart: unless-stopped
+  web:
+    build:
+      context: .
+      dockerfile: deploy/web.Dockerfile
+      args:
+        NUXT_PUBLIC_SUPABASE_URL: ${NUXT_PUBLIC_SUPABASE_URL}
+        NUXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${NUXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY}
+        NUXT_PUBLIC_API_URL: ${NUXT_PUBLIC_API_URL}
+    ports: ["3000:80"]
+    depends_on: [api]
+    restart: unless-stopped
