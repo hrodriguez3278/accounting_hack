@@ -6,13 +6,13 @@
 
 | Componente | Imagen | Puerto | Notas |
 |---|---|---|---|
-| API | `deploy/api.Dockerfile` | 4000 (o `PORT`) | Node 24. Con `SEED_DEMO=true` carga los datos demo antes de iniciar. Healthcheck `/api/health` |
-| Web | `deploy/web.Dockerfile` | 80 | Sitio estático (Nuxt generate) servido por nginx; las variables `NUXT_PUBLIC_*` se incrustan al compilar |
+| Web + puerta de entrada | `deploy/web.Dockerfile` | 80 (único puerto público) | nginx sirve la web y reenvía `/api` a la API por la red interna de Docker |
+| API | `deploy/api.Dockerfile` | 4000 (solo interno) | Node 24. Con `SEED_DEMO=true` carga los datos demo antes de iniciar. Healthcheck `/api/health` |
 | Base de datos, Auth y Storage | Supabase | — | Proyecto provisto por Transformación Digital |
 
 ## 1. Supabase
 
-1. **Authentication → URL Configuration:** *Site URL* = URL pública de la web; agregar `<web>/auth/reset` en *Redirect URLs*.
+1. **Authentication → URL Configuration:** *Site URL* = dirección de la web (sin dominio: `http://<IP-del-servidor>`); agregar `<esa dirección>/auth/reset` en *Redirect URLs*.
 2. **Authentication → Email:** contraseña mínima 10 caracteres; SMTP corporativo.
 3. **API → Exposed schemas:** solo `public`.
 4. Aplicar el esquema (6 migraciones: esquemas, seguridad RLS, catálogos, métricas y bucket privado):
@@ -33,7 +33,7 @@ DATABASE_URL=<cadena del pooler, modo sesión :5432>
 AI_PROVIDER=openai
 OPENAI_API_KEY=<llave>
 OPENAI_MODEL=gpt-4.1-mini
-APP_URL=https://<dominio-web>          # CORS; admite varios separados por coma
+APP_URL=http://<IP-del-servidor>       # o el dominio cuando exista
 SEED_DEMO=true                         # cargar datos demo al arrancar (idempotente)
 SEED_DEMO_RESOLVE_V2=false             # true = también resolver y publicar la V2
 DEMO_PASSWORD=<contraseña de usuarios demo>
@@ -44,8 +44,10 @@ Web (públicas, en tiempo de compilación):
 ```
 NUXT_PUBLIC_SUPABASE_URL=https://<ref>.supabase.co
 NUXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=<clave publicable>
-NUXT_PUBLIC_API_URL=https://<dominio-api>
+NUXT_PUBLIC_API_URL=                   # vacío: la API se sirve en la misma dirección (/api)
 ```
+
+**Sin dominio:** se accede por `http://<IP-del-servidor>`. Funciona igual, pero sin HTTPS el tráfico viaja sin cifrar: limitar el acceso a la red interna o VPN y solicitar a Transformación Digital un subdominio con certificado antes de usar datos reales. Puerto distinto de 80: `WEB_PORT=8080` en `.env`.
 
 ## 3. Construir y ejecutar
 
@@ -76,7 +78,7 @@ En arranques posteriores detecta lo existente y no duplica nada. Para un entorno
 
 ## 5. Verificación posterior
 
-- `GET https://<api>/api/health` → `{"status":"ok","ai_provider":"openai"}`.
+- `GET http://<IP-del-servidor>/api/health` → `{"status":"ok","ai_provider":"openai"}`.
 - Ingresar con `director@altavista.example` y revisar el Overview.
 - `npm run ai:check` con las variables de producción para confirmar la llave de OpenAI.
 
