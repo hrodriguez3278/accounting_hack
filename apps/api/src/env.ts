@@ -7,9 +7,6 @@ const Env = z.object({
   API_PORT: z.coerce.number().int().default(4000),
   API_HOST: z.string().default('127.0.0.1'),
   APP_URL: z.string().default('http://127.0.0.1:3000'),
-  /** supabase = inicio de sesión normal; none = acceso abierto sin login, como PUBLIC_ACCESS_USER */
-  AUTH_MODE: z.enum(['supabase', 'none']).default('supabase'),
-  PUBLIC_ACCESS_USER: z.string().email().default('admin@altavista.example'),
   AI_PROVIDER: z.enum(['openai', 'ollama', 'local']).default('local'),
   OPENAI_API_KEY: z.string().optional(),
   OPENAI_MODEL: z.string().default('gpt-4.1-mini'),

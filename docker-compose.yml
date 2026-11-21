@@ -20,7 +20,6 @@ services:
         NUXT_PUBLIC_SUPABASE_URL: ${NUXT_PUBLIC_SUPABASE_URL}
         NUXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${NUXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY}
         NUXT_PUBLIC_API_URL: ${NUXT_PUBLIC_API_URL:-}   # vacío = misma dirección que la web
-        NUXT_PUBLIC_AUTH_MODE: ${AUTH_MODE:-supabase}   # none = sin inicio de sesión
         NPM_REGISTRY: ${NPM_REGISTRY:-https://registry.npmjs.org}
     ports: ["${WEB_PORT:-80}:80"]
     depends_on: [api]

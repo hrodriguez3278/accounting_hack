@@ -18,7 +18,7 @@
     <div class="border-t border-white/10 px-6 py-5">
       <p class="truncate text-sm font-semibold">{{ s.me?.full_name }}</p>
       <p class="truncate text-xs text-[#a9a8ab]">{{ s.me?.email }}</p>
-      <button v-if="useRuntimeConfig().public.authMode !== 'none'" class="mt-3 inline-flex min-h-9 items-center gap-2 text-sm font-semibold text-[#c9c8cb] hover:text-white" @click="logout">
+      <button class="mt-3 inline-flex min-h-9 items-center gap-2 text-sm font-semibold text-[#c9c8cb] hover:text-white" @click="logout">
         <PhSignOut :size="16" aria-hidden="true" /> Cerrar sesión
       </button>
     </div>

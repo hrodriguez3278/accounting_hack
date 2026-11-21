@@ -9,17 +9,13 @@ export function useApi() {
   const session = useSessionStore();
 
   async function request<T>(method: string, path: string, body?: unknown, opts: { form?: FormData } = {}): Promise<T> {
-    const open = cfg.authMode === 'none';
-    const headers: Record<string, string> = {};
-    if (!open) {
-      const { data } = await $supabase.auth.getSession();
-      const token = data.session?.access_token;
-      if (!token) {
-        await navigateTo('/auth/login');
-        throw new ApiError(401, 'UNAUTHENTICATED', 'Sesión requerida');
-      }
-      headers.authorization = `Bearer ${token}`;
+    const { data } = await $supabase.auth.getSession();
+    const token = data.session?.access_token;
+    if (!token) {
+      await navigateTo('/auth/login');
+      throw new ApiError(401, 'UNAUTHENTICATED', 'Sesión requerida');
     }
+    const headers: Record<string, string> = { authorization: `Bearer ${token}` };
     if (session.organizationId) headers['x-organization-id'] = session.organizationId;
     if (body !== undefined && !opts.form) headers['content-type'] = 'application/json';
     let res: Response;
@@ -32,7 +28,7 @@ export function useApi() {
     const json = text ? JSON.parse(text) : null;
     if (!res.ok) {
       const e = json?.error ?? {};
-      if (res.status === 401 && !open) await navigateTo('/auth/login');
+      if (res.status === 401) await navigateTo('/auth/login');
       throw new ApiError(res.status, e.code ?? 'ERROR', e.message ?? `Error ${res.status}`, e.details);
     }
     return json as T;
