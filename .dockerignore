@@ -2,8 +2,8 @@
 **/.nuxt
 **/.output
 .git
-.env
-.env.*
+**/.env
+**/.env.*
 !.env.example
 test-results
 playwright-report

@@ -40,6 +40,14 @@ const userCache = new Map<string, { userId: string; email: string; exp: number }
 /** Verifica el JWT de Supabase Auth y resuelve la membresía en la organización solicitada. */
 export async function authenticate(deps: Deps, authorization: string | undefined, orgHeader: string | undefined): Promise<AuthContext> {
   const token = authorization?.startsWith('Bearer ') ? authorization.slice(7) : null;
+  if (!token && deps.env.AUTH_MODE === 'none') {
+    // Acceso abierto (sin inicio de sesión): se actúa como el usuario configurado en PUBLIC_ACCESS_USER.
+    // Los permisos, RLS y auditoría siguen aplicando con la identidad de ese usuario.
+    const [u] = await deps.sql<Array<{ user_id: string; email: string }>>`
+      select user_id, email from core.users_profiles where lower(email) = lower(${deps.env.PUBLIC_ACCESS_USER})`;
+    if (!u) throw new HttpError(503, 'PUBLIC_USER_MISSING', `El usuario de acceso abierto ${deps.env.PUBLIC_ACCESS_USER} no existe todavía`);
+    return loadMembership(deps.sql, u.user_id, u.email, orgHeader);
+  }
   if (!token) throw new HttpError(401, 'UNAUTHENTICATED', 'Sesión requerida');
   let cached = userCache.get(token);
   if (!cached || cached.exp < Date.now()) {

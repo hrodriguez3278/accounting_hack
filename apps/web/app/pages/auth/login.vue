@@ -19,13 +19,6 @@
       <button type="submit" class="btn-primary w-full" :disabled="loading">{{ loading ? 'Verificando…' : 'Ingresar' }}</button>
     </form>
     <NuxtLink to="/auth/recover" class="mt-5 inline-block text-sm font-semibold underline underline-offset-4">¿Olvidó su contraseña?</NuxtLink>
-    <details class="mt-10 border-t border-line pt-4 text-sm text-muted">
-      <summary class="cursor-pointer font-semibold text-ink">Usuarios de demostración (entorno local)</summary>
-      <ul class="mt-2 space-y-1">
-        <li v-for="u in demo" :key="u.email"><button type="button" class="underline underline-offset-2" @click="email = u.email">{{ u.email }}</button> · {{ u.role }}</li>
-      </ul>
-      <p class="mt-2">La contraseña local está documentada en el README.</p>
-    </details>
   </div>
 </template>
 
@@ -37,13 +30,6 @@ const email = ref('');
 const password = ref('');
 const error = ref('');
 const loading = ref(false);
-const demo = [
-  { email: 'director@altavista.example', role: 'Director' },
-  { email: 'admin@altavista.example', role: 'Administración financiera' },
-  { email: 'analista@altavista.example', role: 'Analista (solo Guatemala)' },
-  { email: 'auditor@altavista.example', role: 'Auditor' },
-  { email: 'director@boreal.example', role: 'Director de otra organización' },
-];
 
 async function submit() {
   error.value = '';

@@ -17,7 +17,7 @@ Plataforma de consolidación e inteligencia financiera generativa para grupos em
 
 Versiones: **Presupuesto 2027 V1** (publicado), **Proyección de ejecución 2027** (publicada, sin balance) y **Presupuesto 2027 V2** (cargado con 8 errores sembrados para demostrar Calidad de datos).
 
-Usuarios demo (contraseña `Nexora-Demo-2027!`, configurable con `DEMO_PASSWORD`):
+Usuarios demo (la contraseña se define con `DEMO_PASSWORD` en `.env`; en cada carga demo se aplica también a los usuarios existentes):
 
 | Usuario | Rol | Alcance |
 |---|---|---|

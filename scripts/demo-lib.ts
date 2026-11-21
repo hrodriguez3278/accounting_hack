@@ -15,7 +15,9 @@ import { validateVersion } from '../apps/api/src/services/validation.js';
 
 export const ROOT = resolve(import.meta.dirname, '..');
 export const manifest = JSON.parse(readFileSync(join(ROOT, 'data/demo/manifest.json'), 'utf8'));
-export const DEMO_PASSWORD = process.env.DEMO_PASSWORD ?? 'Nexora-Demo-2027!';
+/** En producción la contraseña de los usuarios demo es obligatoria (no hay valor por defecto). */
+export const DEMO_PASSWORD = process.env.DEMO_PASSWORD
+  ?? (process.env.NODE_ENV === 'production' ? '' : 'Nexora-Demo-2027!');
 
 export const DEMO_USERS = [
   { email: 'director@altavista.example', name: 'Dirección Financiera (DEMO)', org: 'altavista-demo', role: 'director', all: true },
@@ -32,6 +34,9 @@ export function demoDeps(): Deps {
 }
 
 export async function ensureUsers(deps: Deps): Promise<Map<string, string>> {
+  if (DEMO_PASSWORD.length < 10) {
+    throw new Error('DEMO_PASSWORD es obligatoria (mínimo 10 caracteres) para crear o actualizar los usuarios demo');
+  }
   const ids = new Map<string, string>();
   const { data: list, error } = await deps.admin.auth.admin.listUsers({ perPage: 200 });
   if (error) throw new Error(`Auth: ${error.message}`);
@@ -42,6 +47,10 @@ export async function ensureUsers(deps: Deps): Promise<Map<string, string>> {
         user_metadata: { full_name: u.name } });
       if (e || !data.user) throw new Error(`No se pudo crear ${u.email}: ${e?.message}`);
       id = data.user.id;
+    } else if (process.env.DEMO_PASSWORD) {
+      // Rota la contraseña de un usuario demo existente a la indicada en DEMO_PASSWORD
+      const { error: e } = await deps.admin.auth.admin.updateUserById(id, { password: DEMO_PASSWORD });
+      if (e) throw new Error(`No se pudo actualizar ${u.email}: ${e.message}`);
     }
     ids.set(u.email, id);
     const [org] = await deps.sql<Array<{ id: string }>>`select id from core.organizations where slug = ${u.org}`;

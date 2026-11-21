@@ -34,9 +34,11 @@ AI_PROVIDER=openai
 OPENAI_API_KEY=<llave>
 OPENAI_MODEL=gpt-4.1-mini
 APP_URL=http://<IP-del-servidor>       # o el dominio cuando exista
+AUTH_MODE=none                         # none = sin inicio de sesión; supabase = con login
+PUBLIC_ACCESS_USER=admin@altavista.example   # usuario con el que actúa el acceso abierto
 SEED_DEMO=true                         # cargar datos demo al arrancar (idempotente)
 SEED_DEMO_RESOLVE_V2=false             # true = también resolver y publicar la V2
-DEMO_PASSWORD=<contraseña de usuarios demo>
+DEMO_PASSWORD=<contraseña de usuarios demo, mínimo 10 caracteres; obligatoria>
 ```
 
 Web (públicas, en tiempo de compilación):
@@ -48,6 +50,8 @@ NUXT_PUBLIC_API_URL=                   # vacío: la API se sirve en la misma dir
 ```
 
 **Sin dominio:** se accede por `http://<IP-del-servidor>`. Funciona igual, pero sin HTTPS el tráfico viaja sin cifrar: limitar el acceso a la red interna o VPN y solicitar a Transformación Digital un subdominio con certificado antes de usar datos reales. Puerto distinto de 80: `WEB_PORT=8080` en `.env`.
+
+**Acceso abierto (`AUTH_MODE=none`):** la plataforma se abre sin pantalla de inicio de sesión y todas las acciones se registran como `PUBLIC_ACCESS_USER`. Cualquiera que llegue a la dirección puede ver y modificar los datos: usar solo en red interna o VPN y con datos de demostración. Para volver al login: `AUTH_MODE=supabase` y `docker compose up -d --build`.
 
 ## 3. Construir y ejecutar
 
@@ -85,4 +89,4 @@ En arranques posteriores detecta lo existente y no duplica nada. Para un entorno
 ## Consideraciones
 
 - OpenAI recibe preguntas, nombres de empresas y cifras agregadas de las consultas; nunca credenciales ni archivos. Revisar el acuerdo con el proveedor antes de usar datos reales.
-- Los usuarios demo tienen una contraseña conocida: cambiarla (`DEMO_PASSWORD`) o eliminarlos en entornos compartidos.
+- La contraseña de los usuarios demo es `DEMO_PASSWORD`; cada arranque con `SEED_DEMO=true` la vuelve a aplicar. No se muestran credenciales en la pantalla de inicio de sesión.

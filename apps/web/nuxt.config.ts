@@ -13,6 +13,8 @@ export default defineNuxtConfig({
       supabaseUrl: process.env.NUXT_PUBLIC_SUPABASE_URL ?? 'http://127.0.0.1:54321',
       supabasePublishableKey: process.env.NUXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ?? '',
       apiUrl: process.env.NUXT_PUBLIC_API_URL ?? 'http://127.0.0.1:4000',
+      // supabase = con inicio de sesión; none = acceso abierto sin login
+      authMode: process.env.NUXT_PUBLIC_AUTH_MODE === 'none' ? 'none' : 'supabase',
     },
   },
   app: {
